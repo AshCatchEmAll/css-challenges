@@ -1,2 +1,2 @@
 # css-challenges
-CSS challenges 
+1. Time-tracking dashboard
