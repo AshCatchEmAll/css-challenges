@@ -1,0 +1,304 @@
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: hsl(226, 43%, 10%);
+  padding: 0px;
+  margin: 0px;
+}
+
+.time-cards {
+  width: 240px;
+  height: 240px;
+  background-image: url("./images/icon-work.svg");
+  background-position: right 20px top -5px;
+  background-size: 65px;
+  background-repeat: no-repeat;
+  background-color: hsl(15, 100%, 70%);
+  color: white;
+  border-radius: 25px;
+  vertical-align: middle;
+  position: relative;
+  grid-area: user;
+}
+.card-content-container {
+  background-color: hsl(235, 46%, 20%);
+  padding-top: 40px;
+  padding-left: 20px;
+  position: absolute;
+  bottom: 0px;
+  width: 220px;
+  height: 150px;
+  border-radius: 20px;
+}
+@media (max-width: 1300px) {
+  .time-cards {
+    width: 340px;
+    height: 220px;
+    background-image: url("./images/icon-work.svg");
+    background-position: right 20px top -5px;
+    background-size: 65px;
+    background-repeat: no-repeat;
+    background-color: hsl(15, 100%, 70%);
+    color: white;
+    border-radius: 25px;
+    vertical-align: middle;
+    position: relative;
+    grid-area: user;
+  }
+  .card-content-container {
+    background-color: hsl(235, 46%, 20%);
+    padding-top: 40px;
+    padding-left: 20px;
+    position: absolute;
+    bottom: 0px;
+    width: 320px;
+    height: 120px;
+    border-radius: 20px;
+  }
+}
+
+.card-content-container:hover {
+  cursor: pointer;
+  background-color: hsl(235, 46%, 30%);
+  transition: background-color ease-in;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 30px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.card-time {
+  font-size: 35px;
+  font-weight: 300;
+  margin-bottom: 0;
+  margin-top: 25px;
+}
+
+.card-menu {
+  position: absolute;
+  right: 20px;
+  top: 3px;
+  font-size: 25px;
+}
+
+.card-menu:hover {
+  cursor: pointer;
+  color: hsl(236, 100%, 87%);
+  transition: color ease-in;
+}
+
+.card-footer {
+  font-size: 13px;
+  font-weight: 100;
+  color: hsl(236, 100%, 87%);
+}
+@media (max-width: 1300px) {
+  .card-time {
+    display: inline-block;
+
+    margin-top: 15px;
+  }
+
+  .card-footer {
+    display: inline-block;
+    position: relative;
+    margin-top: 15px;
+    left: 100px;
+  }
+}
+/* Grid */
+
+.grid-container {
+  display: grid;
+
+  grid-template-areas:
+    "user work play study"
+    "user exercise social selfcare";
+  margin: auto;
+  width: 60%;
+  gap: 25px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 40%;
+}
+@media (max-width: 1300px) {
+  .grid-container {
+    grid-template-areas:
+      "user"
+      "work"
+      "play"
+      "study"
+      "exercise"
+      "social"
+      "selfcare"
+      "attribution";
+    /* grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); */
+    width:90vw;
+    position: relative;
+    justify-content: center;
+    margin: auto;
+    margin-top: 55px;
+  }
+}
+/* Attribution */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 15px;
+  left: 0px;
+  right: 0px;
+  grid-area: attribution;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@media (max-width: 1300px) {
+  .attribution {
+    position: static;
+    margin:auto;
+  }
+}
+
+/* User card */
+.user-card {
+  height: auto;
+  position: relative;
+  background-color: hsl(235, 46%, 20%);
+}
+
+.user-card-container {
+  position: absolute;
+  width: 240px;
+  height: 350px;
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 20px;
+}
+.user-card-content {
+  position: absolute;
+  left: 25px;
+  top: 0px;
+  bottom: 0px;
+  height: 50%;
+}
+.user-avatar {
+  margin: 30px 10px;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  box-sizing: border-box;
+  border: 3px solid white;
+  display: inline-block;
+}
+.user-subtitle {
+  font-size: 13px;
+  font-weight: 100;
+  margin: 10px 5px 10px 10px;
+  color: hsl(236, 100%, 87%);
+}
+
+.user-name {
+  font-size: 45px;
+  font-weight: 300;
+  margin: 0px 10px;
+}
+
+.user-footer-container {
+  position: absolute;
+  bottom: 15px;
+  left: 36px;
+  color: hsl(235, 45%, 61%);
+}
+
+.user-footer-container p:hover {
+  cursor: pointer;
+  color: hsl(236, 100%, 87%);
+  transition: color ease-in;
+}
+
+.user-footer-weekly {
+  color: hsl(236, 100%, 87%);
+}
+
+@media (max-width: 1300px) {
+  .user-card {
+    height: 240px;
+    position: relative;
+    background-color: hsl(235, 46%, 20%);
+    width: 340px;
+  }
+
+  .user-card-container {
+    position: absolute;
+    width: 340px;
+    height: 140px;
+    background-color: hsl(246, 80%, 60%);
+    border-radius: 20px;
+  }
+  .user-card-content {
+    position: absolute;
+    left: 25px;
+    top: 0px;
+    bottom: 0px;
+    height: 50%;
+    display: inline-block;
+  }
+
+  .user-avatar {
+    margin: 30px 10px;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    box-sizing: border-box;
+    border: 3px solid white;
+    display: inline-block;
+  }
+
+  .user-subtitle {
+    font-size: 13px;
+    position: absolute;
+    font-weight: 100;
+    top: 45px;
+    color: hsl(236, 100%, 87%);
+    display: inline-block;
+  }
+
+  .user-name {
+    font-size: 25px;
+    font-weight: 300;
+    margin: 0px;
+    display: inline-block;
+    position: relative;
+    bottom: 45px;
+    left: 5px;
+  }
+  .first-name {
+    display: inline-block;
+  }
+
+  .last-name {
+    display: inline-block;
+  }
+  .user-footer-container {
+    width: 100%;
+    left: 33px;
+  }
+  .user-footer-container p {
+    display: inline-block;
+    margin: 0px 60px 18px 0px;
+  }
+
+  .user-footer-weekly {
+    color: hsl(236, 100%, 87%);
+  }
+}
