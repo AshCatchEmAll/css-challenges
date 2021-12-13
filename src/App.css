@@ -1,38 +1,341 @@
-.App {
-  text-align: center;
+html {
+  height: 100%;
+}
+body {
+  background-color: hsl(229, 57%, 11%);
+  background-image: url("./images/bg-desktop.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 100vh;
+  background-size: contain;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.outer-div {
+  position: relative;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.title {
+  margin-bottom: 25px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  scale: 0.6;
+  width: 100%;
+  position: relative;
+
+  right: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.grid-container {
+  display: grid;
+  grid-template: "side-a side-b";
+  grid-template-columns: 0.2fr 3fr;
+  width: 50%;
+  margin: auto;
+  gap: 10px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-top: 0px;
+
+  place-items: center;
+
+  min-height: 100vh;
+}
+
+.side-a {
+  grid-area: side-a;
+  background-color: hsl(228, 56%, 26%);
+  border-radius: 5px;
+  border-top-right-radius: 40px;
+  padding: 20px;
+  position: relative;
+  width: 200px;
+}
+
+.side-b {
+  grid-area: side-b;
+  background-color: hsl(228, 56%, 26%);
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  width: 500px;
+  position: relative;
+}
+
+.options {
+  /* position: absolute; */
+  /* bottom: 10px; Nope hahaha */
+  display: grid;
+  grid-template: "file folder upload . . . . . . .";
+}
+
+.file {
+  grid-area: file;
+  background-color: hsl(229, 57%, 11%);
+  padding: 10px;
+  scale: 0.8;
+  border-radius: 8px;
+  margin-right: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.upload {
+  grid-area: upload;
+  background-color: hsl(229, 57%, 11%);
+  padding: 10px;
+  scale: 0.85;
+  border-radius: 8px;
+  margin-right: 5px;
+  padding-top: 12px;
+  padding-bottom: 14px;
+}
+
+.folder {
+  grid-area: folder;
+  background-color: hsl(229, 57%, 11%);
+  padding: 10px;
+  scale: 0.8;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+
+.slider-title {
+  grid-area: slider-title;
+  color: hsl(229, 7%, 55%);
+  font-weight: 200;
+  margin-bottom: 16px;
+}
+.slider-title span {
+  color: white;
+}
+.slider {
+  grid-area: slider;
+  width: 100%;
+  border-radius: 5px;
+  padding: 2px;
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 10px; /* Specified height */
+  background: hsl(229, 57%, 11%); /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+  margin: -4px 6px 0 0;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: white; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 12px; /* Set a specific slider handle width */
+  height: 12px; /* Slider handle height */
+  background: white; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+  align-self: center;
+}
+
+/* input[type='range']::-webkit-slider-runnable-track {
+  height: 0.9rem;
+  margin: 0;
+  width: 100%;
+  cursor: pointer;
+  background: linear-gradient(#e66465, #9198e5);
+} */
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: #01c1c6;
+  border-radius: 50%;
+  position: relative;
+  bottom: 6px;
+  cursor: pointer;
+}
+.slider-subtitle {
+  grid-area: slider-subtitle;
+  display: grid;
+  grid-template: "left-subtitle right-subtitle";
+  position: relative;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  /* margin-top: 16px; */
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.left-subtitle {
+  grid-area: left-subtitle;
+  position: absolute;
+  left: 2px;
+}
+
+.right-subtitle {
+  grid-area: right-subtitle;
+  position: absolute;
+  right: 2px;
+}
+
+.tooltip {
+  background-color: white;
+  border-radius: 8px;
+  position: absolute;
+
+  right: 40px;
+  bottom: 105px;
+
+  padding: 10px 30px;
+  font-size: 2rem;
+  color: black;
+  font-weight: 700;
+}
+
+.tooltip .gbleft {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 100;
+  color: hsl(229, 7%, 55%);
+  vertical-align: baseline;
+  position: relative;
+  bottom: 2px;
+}
+
+.tooltip .five {
+  vertical-align: sub;
+}
+
+.tooltip:after {
+  content: "";
+  position: absolute;
+  top: 90%;
+  right: 0.2%;
+  margin-right: 0px;
+  border-width: 17px;
+  border-style: solid;
+  border-color: white white transparent transparent;
+}
+
+@media (max-width: 1094px) {
+  .grid-container {
+    display: grid;
+    grid-template:
+      "side-a"
+      "side-b";
+    /* grid-template-columns: 0.2fr 3fr; */
+    grid-template-rows: 0.2fr 0.2fr;
+    width: 60%;
+
+    gap: 10px;
+
+    margin-top: 0px;
+
+    align-content: center;
+
+    place-items: center;
+
+    min-height: 100vh;
   }
-  to {
-    transform: rotate(360deg);
+  .side-a {
+    grid-area: side-a;
+    background-color: hsl(228, 56%, 26%);
+    border-radius: 5px;
+    border-top-right-radius: 40px;
+    padding: 20px;
+    position: relative;
+    width: 300px;
+  }
+
+  .side-b {
+    grid-area: side-b;
+    background-color: hsl(228, 56%, 26%);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 300px;
+    position: relative;
+  }
+  .tooltip {
+    background-color: white;
+    border-radius: 8px;
+    position: absolute;
+
+    left: 0px;
+    right: 0px;
+
+    margin-left: 80px;
+    margin-right: 80px;
+    bottom: -50px;
+    padding: 10px 30px;
+    font-size: 2rem;
+    color: black;
+    font-weight: 700;
+  }
+  .tooltip:after {
+    display: none;
+  }
+  .logo {
+    scale: 0.4;
+    width: 100%;
+    position: relative;
+
+    right: 80px;
+  }
+  .file {
+    grid-area: file;
+    background-color: hsl(229, 57%, 11%);
+    padding: 10px;
+    scale: 1.1;
+    border-radius: 8px;
+    margin-right: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .upload {
+    grid-area: upload;
+    background-color: hsl(229, 57%, 11%);
+    padding: 10px;
+    scale: 1.07;
+    border-radius: 8px;
+    margin-right: 5px;
+    padding-top: 12px;
+    padding-bottom: 15px;
+  }
+
+  .folder {
+    grid-area: folder;
+    background-color: hsl(229, 57%, 11%);
+    padding: 10px;
+    scale: 1.05;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 8px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-color: hsl(229, 57%, 11%);
+    background-image: url("./images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
   }
 }
